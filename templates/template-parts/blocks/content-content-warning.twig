@@ -1,0 +1,25 @@
+{#
+/**
+* Block Name: Content Warning
+* This is the template that displays a collapsable region
+*/
+#}
+
+<div class="content-warning">
+
+  <a
+    class="content-warning__trigger"
+    data-toggle="collapse"
+    href="#content-warning"
+    role="button"
+    aria-expanded="false"
+    aria-controls="content-warning"
+    >
+    Content Warning
+  </a>
+
+  <div class="collapse content-warning__content" id="content-warning">
+    {{ fields.content }}
+  </div>
+
+</div>

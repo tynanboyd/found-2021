@@ -1,0 +1,157 @@
+$font: futura-pt, sans-serif;
+
+html {
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 2.25em;
+  font-weight: 800;
+
+  @include MQ(maxS) {
+    font-size: 2rem;
+  }
+}
+
+.fit-text {
+@include fitText(32px, 200px, 10vw);
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: .75rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include MQ(maxS) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  @include MQ(maxS) {
+    font-size: 1.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: .75rem;
+}
+
+blockquote {
+  margin-left: 2.5rem;
+  margin: 2rem 0 2rem 3rem;
+  padding-left: 1rem;
+  border-left: 5px solid #eee;
+}
+
+hr {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+a.found-link {
+  color: white;
+  transition: color 0.2s cubic-bezier(.17,.67,.83,.67);
+
+  &:hover {
+    color: $color-highlight;
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $color-darkmode;
+  text-decoration: underline;
+  text-decoration-color: $color-highlight;
+
+  &:hover {
+    color: $color-darkmode;
+  }
+}
+
+a.read-more {
+  color: $color-highlight;
+}
+
+.page-content {
+
+  p a:not(.button):not(.nav-link) {
+    color: $color-highlight;
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0%;
+      content: '';
+      width: 0%;
+      background-color: black;
+      height: 1px;
+      opacity: 1;
+      transition: all 0.25s $cubic-bezier;
+    }
+
+    &:hover {
+      color: $color-highlight;
+      text-decoration: none;
+    }
+
+    &:hover:after {
+      width: 100%;
+      opacity: 1;
+      background-color: $color-highlight;
+    }
+
+  }
+}
+
+
+
+a.fancy-hover {
+  color: black;
+  background-image: linear-gradient(180deg, transparent 85%, $color-highlight 0);
+  background-size: 85% 50%;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  transition: background-size $cubic-bezier 0.1s;
+  color: darken($color-highlight, 10%);
+
+  &:hover {
+    background-size: 100% 100%;
+    text-decoration: none;
+    color: darken($color-highlight, 10%);
+  }
+}
+
+
+.theme-text {
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+  text-stroke: 3px white;
+  transition: color 0.2s;
+
+  &:hover,
+  &--active,
+  &--filled {
+    color: $color-highlight;
+    -webkit-text-stroke: 2px darken($color-highlight, 8%);
+    text-stroke: 2px darken($color-highlight, 8%);
+    text-shadow: 4px 4px 1px darken($color-highlight, 5%);
+  }
+}

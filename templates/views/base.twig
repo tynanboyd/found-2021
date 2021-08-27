@@ -1,0 +1,15 @@
+{% block pageTitle %}
+  <h1 class="page-title">{{ post.title }}</h1>
+{% endblock %}
+
+<main class="page-content">
+  {% block pageContent %}
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 offset-md-1">
+          {{ post.content }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</main>

@@ -1,0 +1,99 @@
+.schedule {
+
+  &__nav {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  a.nav-link {
+    color: lighten($color-darkmode, 15%);
+    text-decoration: none;
+
+    &:hover {
+      background-color: lighten($color-highlight, 30%);
+    }
+
+    &.active {
+      background-color: lighten($color-highlight, 30%);
+      border-bottom: 2px solid $color-highlight;
+    }
+  }
+
+  &__subheading {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-darkmode;
+    margin-bottom: 0;
+  }
+
+  &__tab-content {
+    background-color: lighten($color-darkmode, 90%);
+    width: 100%;
+    padding: 2rem;
+  }
+
+  &__event-link {
+    display: flex !important;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-left: 0;
+    padding-left: 0;
+    border-bottom: 1px dotted lighten($color-darkmode, 50%);
+
+    * {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($color-highlight, 30%);
+    }
+  }
+
+  &__event-title {
+    margin: 0 15px 0 0;
+  }
+
+  &__event-time {
+    color: lighten($color-darkmode, 10%);
+  }
+
+  &__event-performance-type {
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+
+  &__list {
+    padding-left: 0;
+  }
+
+  &__group {
+    flex: 1;
+
+    @include MQ(S) {
+      padding-right: 2rem;
+    }
+  }
+
+  &__tab-pane {
+
+    &--inner {
+      display: flex;
+      flex-direction: column;
+
+      @include MQ(S) {
+        flex-direction: row;
+      }
+    }
+  }
+
+}

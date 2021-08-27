@@ -1,0 +1,46 @@
+/**
+
+Table of Contents:
+---------------------
+1. Colours
+2. Typography
+
+**/
+
+// Colours
+// ---------------------
+
+$burnt-coral: #ed8a81;
+$electric-green: #00ffd3;
+$color-highlight: $burnt-coral;
+$color-contrast: #facee1;
+$color-darkmode: #121212;
+
+$color-list: (
+  'white': #fff,
+  'black': #000,
+  'color-darkmode': $color-darkmode,
+);
+
+@each $key, $val in $color-list {
+  body {
+    .background--#{$key} {
+      background-color: $val;
+    }
+
+    .has-#{$key}-background-color {
+      background-color: $val;
+    }
+
+    .color--#{$key} {
+      color: $val;
+    }
+
+    .has-#{$key}-color {
+      color: $val;
+    }
+  }
+}
+
+// Typography
+// ---------------------

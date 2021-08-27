@@ -1,0 +1,31 @@
+.chat {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  &__toggle {
+    color: white;
+    margin-right: 2rem;
+    text-align: right;
+    background-color: transparentize($color-darkmode, 0.1);
+    padding: 10px;
+
+    &:hover {
+      color: $color-highlight;
+    }
+  }
+}
+
+.single-event .chat__toggle {
+  color: black;
+}
+
+.home,
+.single-event {
+  position: relative;
+}
+
+// homepage live streaming to either show a separate embed OR a link to the event page
+// add field for twitch on DJ booth event
+// CC symbol on schedule and header mera

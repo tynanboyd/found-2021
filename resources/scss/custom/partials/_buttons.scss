@@ -1,0 +1,69 @@
+.button {
+  // button styles
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  flex: 1 0 auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  background-color: $color-highlight;
+  color: black;
+  display: inline-block;
+  line-height: 1;
+  transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: darken($color-highlight, 15%);
+  }
+
+  &--secondary {
+    // secondary
+
+    &:hover {
+      // secondary hover
+    }
+  }
+
+  &--large {
+    // large button styles
+  }
+
+  &--ghost {
+    background: transparent;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+
+    &:hover {
+      background-color: black;
+      color: $color-highlight;
+    }
+
+  }
+
+  &--huge {
+    font-size: 2rem;
+    box-shadow: 5px 5px 0px darken($color-highlight, 15%);
+    transition: box-shadow 0.2s $cubic-bezier;
+
+    &:hover {
+      box-shadow: 1px 1px 0px lighten($color-highlight, 15%);
+      color: black;
+    }
+  }
+}
+
+.wp-block-button {
+  color: black;
+
+  &__link {
+    border-radius: 0;
+    @extend .button;
+  }
+}

@@ -1,0 +1,47 @@
+.modal {
+
+  &__header {
+    background-color: $color-darkmode;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    @include MQ(M) {
+      flex-direction: row;
+
+      * {
+        flex: 1;
+      }
+    }
+  }
+
+  &__bio {
+    @include MQ(M) {
+      margin-left: 1rem;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-full {
+    max-width: 90%;
+  }
+
+  &__close {
+    color: white;
+    opacity: 1;
+    font-weight: 100;
+
+    &:hover {
+      color: $color-contrast;
+      opacity: 1;
+    }
+  }
+}

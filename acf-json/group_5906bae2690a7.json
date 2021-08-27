@@ -1,0 +1,395 @@
+{
+    "key": "group_5906bae2690a7",
+    "title": "Event Fields",
+    "fields": [
+        {
+            "key": "field_5eeac287e5ae5",
+            "label": "Performance Type",
+            "name": "performance_type",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5eeac2668739b",
+            "label": "Payment Link",
+            "name": "payment_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ddff3bb9db4",
+            "label": "Payment Button Text",
+            "name": "payment_text",
+            "type": "text",
+            "instructions": "Defaults to \"Tickets\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5eeac2668739b",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef2aad4cdf89",
+            "label": "Time",
+            "name": "time",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ongoing": "Ongoing",
+                "time-specific": "Time-Specific"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "ongoing",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ef2ab1f4c6e1",
+            "label": "Performances Times",
+            "name": "performance_times",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef2aad4cdf89",
+                        "operator": "==",
+                        "value": "time-specific"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Performance",
+            "sub_fields": [
+                {
+                    "key": "field_5ef2ab3c4c6e2",
+                    "label": "Date Time",
+                    "name": "date_time",
+                    "type": "date_time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ef2aad4cdf89",
+                                "operator": "==",
+                                "value": "time-specific"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y g:i a",
+                    "return_format": "F j, Y g:i a",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_5ef78f988bf72",
+                    "label": "End Time",
+                    "name": "end_time",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                }
+            ]
+        },
+        {
+            "key": "field_60de25335ad58",
+            "label": "Event Location",
+            "name": "event_location",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
+        },
+        {
+            "key": "field_60dbef2be537d",
+            "label": "Online Only Fields",
+            "name": "online_only_fields",
+            "type": "true_false",
+            "instructions": "Display the fields for events hosted online.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ef2adf76583d",
+            "label": "Streaming Now",
+            "name": "streaming_now",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60dbef2be537d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5efcd4f3561c9",
+            "label": "What to Show?",
+            "name": "what_to_show",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef2adf76583d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "embed": "Embed",
+                "link": "Link to Event Page"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5efcd5abba75a",
+            "label": "Video Embed",
+            "name": "video_embed",
+            "type": "textarea",
+            "instructions": "The content here will appear on the front page if this Event is Streaming Now.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60dbef2be537d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ef41f05f9ece",
+            "label": "Chat Embed",
+            "name": "chat_embed",
+            "type": "textarea",
+            "instructions": "Copy and paste the embed code from <a href=\"https:\/\/minnit.chat\/\">https:\/\/minnit.chat\/<\/a>. Click Quick Links > View a list of chats you made or a ranked in > select the chat > Embed your chat > Get HTML code > Choose dynamic > Copy embed code",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60dbef2be537d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ef41f7658cee",
+            "label": "Chat On",
+            "name": "chat_on",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef41f05f9ece",
+                        "operator": "!=empty"
+                    },
+                    {
+                        "field": "field_60dbef2be537d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5efcda0af3050",
+            "label": "Closed Captioning",
+            "name": "closed_captioning",
+            "type": "true_false",
+            "instructions": "If on, the CC icon will appear on the schedule, lineup and event header.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60dbef2be537d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "comments",
+        "format",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1625171293
+}

@@ -1,0 +1,75 @@
+.site-header {
+  background-color: black;
+  $block: &;
+  padding: 10px 24px;
+
+  @include MQ(M) {
+    padding: 10px 48px;
+  }
+
+  &__center {
+    color: lighten($color-highlight, 5%);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include MQ(M) {
+      text-align: left;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  &__festival-dates {
+    @include MQ(M) {
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 1.1;
+    }
+  }
+
+  &__tag {
+    color: lighten($color-highlight, 5%);
+    display: block;
+    letter-spacing: 10px;
+    transition: all 0.3s $cubic-bezier;
+
+    @include MQ(L) {
+      letter-spacing: 20px;
+      color: lighten($color-highlight, 40%);
+      text-shadow: 2px 2px 10px $color-highlight;
+      padding: 0.1rem;
+      font-size: 25px;
+    }
+  }
+
+  &__logo {
+    svg {
+      width: 85px;
+      transition: transform 0.2s $cubic-bezier;
+
+      path {
+        width: 100%;
+      }
+
+      @include MQ(M) {
+        width: 85px;
+      }
+
+      &:hover {
+        transform: rotate(32deg) scale(1.1);
+      }
+    }
+
+    &:hover {
+      path {
+        fill: $color-highlight;
+      }
+    }
+  }
+}

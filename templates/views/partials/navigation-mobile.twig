@@ -1,0 +1,24 @@
+<div class="mobile-nav-container js-mobile-nav-container mobile-nav">
+  <nav class="mobile-nav__nav">
+    <ul class="mobile-nav__menu">
+      {% for item in main_menu.get_items %}
+        {% if item.get_children %}
+          <li class="{{ item.classes | join(' ') }} mobile-nav__item mobile-nav__item--has-children">
+            <a class="mobile-nav__link mobile-nav__link--has-children" href="{{ item.link }}">{{ item.title }}</a>
+            <ul class="mobile-nav__submenu">
+              {% for child in item.get_children %}
+                <li class="mobile-nav__submenu-item {{ child.classes|join(' ') }}">
+                  <a href="{{ child.link }}" class="mobile-nav__submenu-link">{{ child.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li class="mobile-nav__item">
+            <a class="mobile-nav__link" href="{{ item.link }}">{{ item.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

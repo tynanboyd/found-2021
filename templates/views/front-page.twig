@@ -1,0 +1,113 @@
+{% if currently_streaming_events %}
+  <section class="now-streaming">
+    <div class="now-streaming__intro text-center">
+      <h2 class="now-streaming__section-heading found-heading found-heading--filled background--color-darkmode">Now Streaming</h2>
+    </div>
+    {% for event in currently_streaming_events %}
+      <article class="now-streaming__event event-wrapper">
+          <header class="event-header">
+            <div class="event-header__image background-size-cover" style="background-image: url('{{ Image(event.thumbnail) }}');">
+              <h1 class="event-header__title"><a class="event-header__title-link" href="{{ event.link }}">{{ event.title }}</a></h1>
+            </div>
+          </header>
+
+          <main class="event-content flex-center background--color-darkmode">
+            <div class="event-content__content event-content__content--frontpage">
+              {% if event.meta('what_to_show') == 'link' %}
+                <a class="button button--huge" href="{{ event.link }}">Event Page</a>
+              {% elseif event.meta('what_to_show') == 'embed' %}
+                    {{ event.meta('video_embed') }}
+              {% endif %}
+            </div>
+          </main>
+
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+{% endif %}
+
+<section class="hero text-center flex-center"
+  {% if hero.background_image %}style="background-image:url('{{ TimberImage(hero.background_image)|resize(1600) }}"{% endif %}
+  >
+  <h1 class="hero__heading found-heading">Found Festival<span class="hero__heading--large fit-text">2021</span></h1>
+</section>
+
+{% if post.meta('chat_embed') and post.meta('chat_on') %}
+  <section class="chat">
+    <div class="chat__embed">
+      <a
+        data-toggle="collapse"
+        href="#chat"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+        class="chat__toggle"
+      >
+        Toggle Chat
+      </a>
+      <div class="collapse show" id="chat">
+        {{ post.meta('chat_embed') }}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% if random_music_video and post.meta('show_music_videos') %}
+  <section class="random-video">
+    <div class="random-video__intro text-center">
+      <h2 class="found-heading found-heading--filled random-video__section-heading">Found Grounds Music Series</h2>
+      {% if post.meta('music_intro_text') %}
+        <div class="d-flex justify-content-center">
+          <p class="random-video__intro-text color--white">{{ post.meta('music_intro_text') }}</p>
+        </div>
+      {% endif %}
+    </div>
+    {# <object style="width: 100%; height: 100vh;">
+      <param name="movie" value="{{ random_music_video }}">
+      <embed src="{{ random_music_video }}" type="application/x-shockwave-flash">
+    </object> #}
+    <div class="responsive-embed">
+        <iframe width="560" height="315" src="{{ random_music_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+{% endif %}
+
+{% if post.meta('promo_boxes') %}
+  <section class="promo-boxes">
+    {% for item in post.meta('promo_boxes') %}
+      <div class="promo-box">
+        {% if item.heading %}
+          <h3 class="promo-box__heading">{{ item.heading }}</h3>
+        {% endif %}
+        {% if item.content %}
+          <p class="promo-box__content">{{ item.content }}</p>
+        {% endif %}
+        {% if item.page_link %}
+          <a class="button button--ghost promo-box__button" href="{{ item.page_link.url }}">{{ item.button_text ? item.button_text : 'More' }}</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}
+
+{% if post.meta('supporter_logos') %}
+  <section class="supporters background--color-darkmode">
+    <div class="container">
+      <div class="supporters__grid flex-center">
+        {% for supporter in post.meta('supporter_logos') %}
+          <div class="supporters__item">
+            {% if supporter.link %}
+              <a href="{{ supporter.link }}">
+            {% endif %}
+            <img class="supporters__logo" src="{{ Image(supporter.logo) }}" alt="{{ supporter.logo.alt }}">
+            {% if supporter.link %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+

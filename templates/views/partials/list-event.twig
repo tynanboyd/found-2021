@@ -1,0 +1,12 @@
+<a href="{{ event.link }}">
+  <article class="event-listing">
+    <img class="event-listing__image" src="{{ event.thumbnail|resize(532, 400) }}" alt="">
+    <h2 class="event-listing__title">{{ event.title }}</h2>
+    {% if event.meta('performance_type') %}
+      <span class="event-listing__performance-type">{{ event.meta('performance_type') }}</span>
+    {% endif %}
+    {% if event.meta('closed_captioning') %}
+      <img class="event-listing__closed-captions" src="{{ theme.link }}/public/images/icons/icon-closed-caption.svg" alt="Supports Closed Captioning">
+    {% endif %}
+  </article>
+</a>

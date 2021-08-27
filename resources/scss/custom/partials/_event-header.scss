@@ -1,0 +1,40 @@
+.event-header {
+  display: flex;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 4rem;
+
+  @include MQ(M) {
+    height: calc(100vh - 112px);
+    flex: 1;
+  }
+
+  &__title {
+    @extend .theme-text;
+    @extend .theme-text--active;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 2rem;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    margin: 0;
+    text-align: center;
+    max-width: 95%;
+
+    @include MQ(M) {
+      text-align: left;
+      font-size: 4rem;
+    }
+  }
+
+  &__title-link {
+    // color: white;
+    text-decoration: none;
+    color: $color-highlight;
+  }
+}

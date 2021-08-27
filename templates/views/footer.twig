@@ -1,0 +1,48 @@
+  {% if options.land_acknowledgement %}
+    <div class="land-acknowledgement text-center">
+      {{ options.land_acknowledgement }}
+    </div>
+  {% endif %}
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <h6 class="site-footer__heading">Contact</h6>
+          <a class="site-footer__link found-link" href="mailto:{{ options.email }}">{{ options.email }}</a>
+          <a class="site-footer__link found-link" href="tel:{{ options.phone }}">{{ options.phone }}</a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <h6 class="site-footer__heading">{{ options.footer_menu_heading ? options.footer_menu_heading : 'Menu' }}</h6>
+          <ul class="site-footer__menu no-bullet">
+            {% for item in footer_menu.get_items %}
+              <li class="site-footer__menu-item">
+                <a class="site-footer__menu-link" href="{{ item.link }}">
+                  {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <h6 class="site-footer__heading">Social</h6>
+          <div class="site-footer__social-links">
+            <a class="site-footer__link site-footer__social-link found-link" href="{{ options.facebook }}"><i class="fab fa-facebook"></i></a>
+            <a class="site-footer__link site-footer__social-link found-link" href="{{ options.twitter }}"><i class="fab fa-twitter"></i></a>
+            <a class="site-footer__link site-footer__social-link found-link" href="{{ options.instagram }}"><i class="fab fa-instagram"></i></a>
+            <a class="site-footer__link site-footer__social-link found-link" href="{{ options.newsletter }}"><i class="far fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <h6 class="site-footer__heading">Produced by the</h6>
+          <a class="site-footer__link found-link" href="https://commongroundarts.ca/">Common Ground Arts Society</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/62f5b3df13.js" crossorigin="anonymous"></script>
+
+  {{ wp_footer }}
+
+</body>
+</html>

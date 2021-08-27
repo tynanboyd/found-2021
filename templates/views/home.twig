@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% block pageContent %}
+
+  <div class="container news">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          {% for post in posts %}
+          <article class="news-item">
+            <a class="news-item__title-link" href="{{ post.link }}"><h2 class="news-item__title">{{ post.title }}</h2></a>
+            <div class="news-item__excerpt">{{ post.preview }}</div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

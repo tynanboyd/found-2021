@@ -1,0 +1,50 @@
+{% set featured_image = TimberImage(post.thumbnail).src %}
+<header class="event-header" style="background-image: url('{{ featured_image|resize(1200) }}');">
+    <h1 class="event-header__title">{{ post.title }}</h1>
+</header>
+
+<div class="event-content container">
+
+  <div class="row">
+    <div class="col-12">
+      {% include 'partials/event-meta.twig' %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 event-content__content">
+      {% if post.content %}
+        <div class="event-content__wysiwyg page-content">
+          {% if post.meta('video_embed') and post.meta('online_only_fields') %}
+            <div class="responsive-embed">
+              {{ post.meta('video_embed') }}
+            </div>
+          {% endif %}
+          {{ post.content }}
+        </div>
+    {% endif %}
+    </div>
+  </div>
+
+</div>
+
+
+{# {% if post.chat_embed and post.meta('chat_on') %}
+  <section class="chat d-none d-md-block">
+      <div class="chat__embed">
+        <a
+          data-toggle="collapse"
+          href="#chat"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          class="chat__toggle"
+        >
+          Toggle Chat
+        </a>
+        <div class="collapse show" id="chat">
+          {{ post.meta('chat_embed') }}
+        </div>
+      </div>
+    </section>
+{% endif %} #}

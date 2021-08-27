@@ -1,0 +1,17 @@
+.supporters {
+  padding: 3rem 0;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    width: 150px;
+    margin: 2rem;
+
+    @include MQ(M) {
+      margin: 2rem 3rem;
+    }
+  }
+}

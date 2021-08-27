@@ -1,0 +1,71 @@
+.site-footer {
+  background: black;
+  padding: 24px 0;
+
+  &__link {
+    display: block;
+    color: white;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: white;
+  }
+
+  &__social-links {
+    display: flex;
+  }
+
+  &__social-link {
+    margin-right: 10px;
+  }
+
+  &__menu {
+    padding-left: 0;
+  }
+
+  &__menu-link {
+    color: white;
+
+    &:hover {
+      color: $color-highlight;
+      text-decoration: none;
+    }
+  }
+
+  [class^="col"] {
+    margin-bottom: 1rem;
+
+    @include MQ(L) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.land-acknowledgement {
+  background-color: $color-darkmode;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+
+  @include MQ(M) {
+    color: darken(white, 20%);
+    transition: color 0.3s $cubic-bezier;
+  }
+
+
+  &:hover {
+    color: white;
+  }
+
+  &__text,
+  p {
+    width: 90%;
+    max-width: 700px;
+    font-size: 0.85rem;
+  }
+}

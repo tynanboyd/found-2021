@@ -1,0 +1,42 @@
+<header class="event-meta">
+
+  <div class="event-meta__top event-meta__container">
+
+    {% if post.meta('performance_type') %}
+      <span class="event-meta__performance-type">{{ post.meta('performance_type') }}</span>
+    {% endif %}
+
+    {% if post.meta('closed_captioning') %}
+       <img class="event-meta__closed-captions" src="{{ theme.link }}/public/images/icons/icon-closed-caption.svg" alt="Supports Closed Captioning">
+    {% endif %}
+
+  {% if post.meta('payment_link') %}
+    <a target="_blank" href="{{ post.meta('payment_link') }}" class="button event-meta__purchase-button">{{ post.meta('payment_text') ? post.meta('payment_text') : 'Tickets' }}</a>
+  {% endif %}
+
+  </div>
+
+  <div class="event-meta__bottom event-meta__container">
+    {% if post.meta('performance_times') %}
+      <div class="event-meta__times-group">
+        <h4 class="event-meta__heading">Schedule</h4>
+        <ul class="event-meta__times">
+        {% for time in post.meta('performance_times') %}
+          <li class="event-meta__time no-bullet">
+            {{ time.date_time|date("F d, h:i a") }}{% if time.end_time %}&ndash;{{ time.end_time }}{% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if post.meta('event_location') %}
+      <div class="event-meta__location-group">
+        <h4 class="event-meta__heading">Location</h4>
+        <p class="event-meta__location">{{ post.meta('event_location').address }}</p>
+      </div>
+    {% endif %}
+
+  </div>
+
+</header>

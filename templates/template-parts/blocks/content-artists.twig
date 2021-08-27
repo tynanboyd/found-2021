@@ -1,0 +1,61 @@
+{#
+/**
+* Block Name: Artists
+*
+* This is the template that displays artists and bios
+*/
+#}
+
+
+<section class="content-block artists">
+
+  {% for artist in fields.artists %}
+
+    {% if artist.artist_headshot %}
+      {% set headshot = TimberImage(artist.artist_headshot.url|resize(300, 300)) %}
+    {% endif %}
+    {% if artist.artist_bio %}
+      <a
+        href=""
+        data-toggle="modal"
+        data-target="#artist-{{ loop.index }}"
+      >
+    {% endif %}
+        <article class="artist background-size-cover {{ artist.artist_bio ? 'has-bio' : '' }}" {% if headshot %}style="background-image:url('{{ headshot }}');"{% endif %}>
+          {% if artist.artist_name %}
+            <h3 class="artist__name">{{ artist.artist_name }}</h3>
+          {% endif %}
+        </article>
+    {% if artist.artist_bio %}
+      </a>
+    {% endif %}
+
+    <!-- Modal -->
+    <div class="modal fade" id="artist-{{ loop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-full" role="document">
+        <div class="modal-content">
+          <div class="modal-header modal__header">
+            <h5 class="modal-title modal__title" id="exampleModalLongTitle">{{ artist.artist_name }}</h5>
+            <button type="button" class="close modal__close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body modal__body">
+            {% if headshot %}
+            <div class="modal__headshot">
+              <img src="{{ TimberImage(artist.artist_headshot.url|resize(1000)) }}" alt="Photo of {{ artist.artist_name }}">
+            </div>
+            {% endif %}
+            {% if artist.artist_bio %}
+              <div class="modal__bio">
+                {{ artist.artist_bio }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+
+</section>

@@ -1,0 +1,21 @@
+.random-video {
+  background-color: $color-darkmode;
+  padding: 24px 48px;
+
+  &__section-heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+
+    @include MQ(M) {
+      font-size: 3rem;
+    }
+  }
+
+  &__intro-text {
+    max-width: 600px;
+  }
+
+  .responsive-embed {
+    box-shadow: 3px 3px 5px transparentize($color-contrast, 0.5);
+  }
+}

@@ -1,0 +1,95 @@
+{% extends 'base.twig' %}
+
+{% block pageContent %}
+
+  <div class="container schedule">
+    <div class="row">
+
+      <ul class="nav schedule__nav no-bullet">
+        {% for day in post.meta('festival_dates') %}
+          <li class="nav-item schedule__nav-item">
+            <a
+              class="schedule__nav-link nav-link {{ loop.first ? 'active' : '' }}"
+              id="{{ day.date|date('F j')|sanitize }}-tab"
+              role="tab"
+              data-toggle="tab"
+              href="#{{ day.date|date('F j')|sanitize }}"
+              aria-controls="{{ day.date|date('F j')|sanitize }}"
+              aria-selected="{{ loop.first ? 'true' : '' }}"
+              >
+                {{ day.date|date('F j') }}
+              </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="tab-content schedule__tab-content" id="schedulePane">
+
+      {% for day in post.meta('festival_dates') %}
+
+        <div
+          class="tab-pane schedule__tab-pane fade {{ loop.first ? 'show active' : '' }}"
+          id="{{ day.date|date('F j')|sanitize }}"
+          role="tabpanel"
+          aria-labelledby="{{ day.date|date('F j')|sanitize }}-tab"
+          >
+          <div class="schedule__tab-pane--inner">
+
+            {% if day.events %}
+              <div class="schedule__group">
+                <h3 class="schedule__subheading">Time-Specific Events</h3>
+                <ul class="schedule__list no-bullet">
+                  {% for item in day.events %}
+                    {% set event = item.event %}
+                    <li class="schedule__event">
+                      <a class="schedule__event-link color--black" href="{{ event.link }}">
+                        <span class="schedule__event-time">{{ item.time }}</span>
+                        <h4 class="schedule__event-title">{{ event.title }}</h4>
+                        {% if event.performance_type %}
+                          <span class="schedule__event-performance-type">{{ event.performance_type }}</span>
+                        {% endif %}
+                        {% if event.closed_captioning %}
+                          <img src="{{ theme.link }}/public/images/icons/icon-closed-caption.svg" alt="Supports Closed Captioning">
+                        {% endif %}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="schedule__group">
+              <h3 class="schedule__subheading">Ongoing Events</h3>
+              <ul class="schedule__list no-bullet">
+                {% for event in ongoing_events %}
+                  <li class="schedule__event">
+                    {% if event.title %}
+                      <a class="schedule__event-link color--black" href="{{ event.link }}">
+                        <h4 class="schedule__event-title">{{ event.title }}</h4>
+                        {% if event.performance_type %}
+                          <span class="schedule__event-performance-type">{{ event.performance_type }}</span>
+                        {% endif %}
+                        {% if event.closed_captioning %}
+                          <img src="{{ theme.link }}/public/images/icons/icon-closed-caption.svg" alt="Supports Closed Captioning">
+                        {% endif %}
+                      </a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      {% endfor %}{# end for day in post.meta('festival_dates') #}
+
+      </div>
+    </div>
+</div><!--container schedule-->
+
+
+{% endblock %}

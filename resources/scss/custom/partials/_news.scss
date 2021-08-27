@@ -1,0 +1,25 @@
+.news {
+
+}
+
+.news-item {
+  margin-bottom: 2rem;
+  max-width: 600px;
+
+  @include MQ(XL) {
+    max-width: 800px;
+    font-size: 112%;
+  }
+
+  &__title {
+
+  }
+
+  &__title-link {
+    color: black;
+  }
+
+  &__excerpt {
+
+  }
+}

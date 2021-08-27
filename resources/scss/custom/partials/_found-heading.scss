@@ -1,0 +1,13 @@
+.found-heading {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+
+  &--filled {
+    color: $color-highlight;
+    -webkit-text-stroke: 2px darken($color-highlight, 8%);
+    text-stroke: 2px darken($color-highlight, 8%);
+    text-shadow: 4px 4px 1px darken($color-highlight, 5%);
+  }
+}
+

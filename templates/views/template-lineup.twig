@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block pageContent %}
+
+  <div class="container dev-notes d-none">
+    <pre>
+      <ul>
+        <li>Randomize</li>
+        <li>Metadata?</li>
+        <li>Order?</li>
+        <li>Ongoing versus one-time. "Playing now" if livestreaming.</li>
+        <li>Push live stream one-time event to homepage</li>
+      </ul>
+    </pre>
+  </div>
+
+  <div class="container events">
+    <div class="row">
+      {% for event in events %}
+        <div class="col-6 col-md-4">
+          {% include 'partials/list-event.twig' %}
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

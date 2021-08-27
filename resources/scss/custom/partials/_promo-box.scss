@@ -1,0 +1,11 @@
+.promo-boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.promo-box {
+  background-color: $color-highlight;
+  flex: 1;
+  padding: 24px 48px;
+  border: 1px solid black;
+}

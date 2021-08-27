@@ -1,0 +1,33 @@
+<ul class="navigation-main d-none d-lg-flex align-items-center">
+  {% for item in main_menu.get_items %}
+    {% if item.get_children %}
+      <li class="{{ item.classes | join(' ') }} dropdown nav-item navigation-main__item">
+        <a
+          class="nav-link dropdown-toggle color--white navigation-main__link found-link"
+          href="{{ item.link }}"
+          id="{{ item.title|sanitize }}"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ item.title }}
+        </a>
+        <ul
+          class="dropdown-menu navigation-main__dropdown"
+          aria-labelledby="{{ item.title|sanitize }}"
+        >
+          {% for child in item.get_children %}
+            <li class="nav-drop-item navigation-main__dropdown-item {{ child.classes | join(' ')}}">
+              <a class="navigation-main__dropdown-item-link" href="{{ child.link }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li class="nav-item navigation-main__item {{ item.classes | join(' ') }}">
+        <a class="nav-link color--white navigation-main__link" href="{{ item.link }}">{{ item.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

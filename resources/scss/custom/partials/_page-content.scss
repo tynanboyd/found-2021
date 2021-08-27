@@ -1,0 +1,7 @@
+.page-content {
+  padding: 2rem 0;
+
+  @include MQ(M) {
+    padding: 4rem 0;
+  }
+}

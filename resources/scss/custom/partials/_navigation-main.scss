@@ -1,0 +1,58 @@
+.navigation-main {
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding-left: 0;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  &__link {
+    color: white;
+    padding: 0.5rem 0.7rem;
+
+    &:hover {
+      color: $color-highlight;
+    }
+  }
+
+  &__dropdown {
+    background-color: black;
+    padding: 12px;
+  }
+
+  &__dropdown-item-link {
+    color: white;
+    font-size: 0.85rem;
+    display: inline-block;
+    line-height: 1.1;
+    padding: 6px 0;
+
+    &:hover {
+      color: $color-highlight;
+      text-decoration: none;
+    }
+  }
+
+  .current-menu-item {
+    a {
+      color: $color-highlight;
+    }
+  }
+
+  &__button {
+    margin-left: 1rem;
+
+    a {
+      @extend .button;
+      @extend .button--ghost;
+      border-color: white;
+      color: white;
+
+      &:hover {
+        border-color: $color-highlight;
+      }
+    }
+  }
+}

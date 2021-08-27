@@ -1,0 +1,30 @@
+.artists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 16px;
+}
+
+.artist {
+  width: 100%;
+  height: 175px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: $color-highlight;
+  transition: background-blend-mode 0.2s $cubic-bezier;
+  background-position: center center;
+
+  &.has-bio:hover {
+    mix-blend-mode: multiply;
+    background-blend-mode: multiply;
+  }
+
+  &__name {
+    background: transparentize(black, 0.5);
+    color: white;
+    margin-bottom: 0;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
