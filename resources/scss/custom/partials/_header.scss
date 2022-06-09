@@ -48,6 +48,16 @@
     }
   }
 
+  &__logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    * {
+      display: block;
+    }
+  }
+
   &__logo {
     svg {
       width: 85px;
@@ -70,6 +80,10 @@
       path {
         fill: $color-highlight;
       }
+    }
+
+    &--cgas {
+      width: 85px;
     }
   }
 }

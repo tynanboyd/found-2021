@@ -16,6 +16,7 @@
     require_once('app/cleanup.php');
     require_once('app/custom-login.php');
     require_once('app/custom-post-types.php');
+    require_once('app/taxonomies.php');
     require_once('app/editor.php');
     require_once('app/helper-functions.php');
     require_once('app/image-sizes.php');

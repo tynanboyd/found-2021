@@ -1,6 +1,6 @@
 .event-meta {
   padding: 2rem;
-  background-color: $burnt-coral;
+  background-color: $color-highlight;
 
   @include MQ(M) {
     padding: 2rem 4rem 2rem;
@@ -63,7 +63,7 @@
 
     &:hover {
       background-color: black;
-      color: $burnt-coral;
+      color: $color-highlight;
     }
   }
 

@@ -19,6 +19,27 @@
             "endpoint": 0
         },
         {
+            "key": "field_62a160d5733c3",
+            "label": "Current Year",
+            "name": "current_year",
+            "type": "number",
+            "instructions": "Appears in the home banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 2022,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 2020,
+            "max": 2050,
+            "step": 1
+        },
+        {
             "key": "field_5eeac3566bd98",
             "label": "Festival Dates",
             "name": "festival_dates",
@@ -27,7 +48,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -230,5 +251,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624589479
+    "show_in_rest": 0,
+    "modified": 1654743293
 }

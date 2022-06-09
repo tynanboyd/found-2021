@@ -11,33 +11,28 @@ if (!defined('ABSPATH')) {
 /**
  * Registers `book_genre` custom taxonomy.
  */
-function register_book_genre_taxonomy(): void
+function register_event_type_taxonomy(): void
 {
     register_taxonomy(
-        'book_genre',
-        'book',
+        'event_type',
+        'event',
         [
-            'rewrite' => [
-                'slug' => 'books/genre',
-                'with_front' => true,
-                'hierarchical' => true,
-            ],
             'hierarchical' => true,
             'public' => true,
             'labels' => [
-                'name' => _x('Genres', 'taxonomy general name', 'textdomain'),
-                'singular_name' => _x('Genre', 'taxonomy singular name', 'textdomain'),
-                'search_items' => __('Search Genres', 'textdomain'),
-                'all_items' => __('All Genres', 'textdomain'),
-                'parent_item' => __('Parent Genre', 'textdomain'),
-                'parent_item_colon' => __('Parent Genre:', 'textdomain'),
-                'edit_item' => __('Edit Genre', 'textdomain'),
-                'update_item' => __('Update Genre', 'textdomain'),
-                'add_new_item' => __('Add New Genre', 'textdomain'),
-                'new_item_name' => __('New Genre Name', 'textdomain'),
-                'menu_name' => __('Genre', 'textdomain'),
+                'name' => _x('Types', 'taxonomy general name', 'textdomain'),
+                'singular_name' => _x('Type', 'taxonomy singular name', 'textdomain'),
+                'search_items' => __('Search Types', 'textdomain'),
+                'all_items' => __('All Types', 'textdomain'),
+                'parent_item' => __('Parent Type', 'textdomain'),
+                'parent_item_colon' => __('Parent Type:', 'textdomain'),
+                'edit_item' => __('Edit Type', 'textdomain'),
+                'update_item' => __('Update Type', 'textdomain'),
+                'add_new_item' => __('Add New Type', 'textdomain'),
+                'new_item_name' => __('New Type Name', 'textdomain'),
+                'menu_name' => __('Types', 'textdomain'),
             ],
         ]
     );
 }
-// add_action('init', 'register_book_genre_taxonomy');
+add_action('init', 'register_event_type_taxonomy');

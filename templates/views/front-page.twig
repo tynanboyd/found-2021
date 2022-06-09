@@ -30,7 +30,7 @@
 <section class="hero text-center flex-center"
   {% if hero.background_image %}style="background-image:url('{{ TimberImage(hero.background_image)|resize(1600) }}"{% endif %}
   >
-  <h1 class="hero__heading found-heading">Found Festival<span class="hero__heading--large fit-text">2021</span></h1>
+  <h1 class="hero__heading found-heading">Found Festival<span class="hero__heading--large fit-text">{{ options.current_year ? options.current_year : now|date('Y') }}</span></h1>
 </section>
 
 {% if post.meta('chat_embed') and post.meta('chat_on') %}
