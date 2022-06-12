@@ -1,0 +1,29 @@
+{#
+/**
+* Block Name: Team
+*
+* This is the template that displays artists and bios
+*/
+#}
+{% if is_preview %}
+  <div class="frontend-styles">
+{% endif %}
+
+<section class="team container {{ is_preview ? 'frontend-styles' : 'not-in-admin' }}">
+  <div class="row">
+    {% for item in fields.team %}
+      <div class="col-12 col-md-4">
+        <figure class="team__person">
+          <img class="team__image" src="{{ TimberImage(item.image) }}" alt="Photo of {{ item.name }}">
+          <h3 class="team__name">{{ item.name }}</h3>
+          <span class="team__role color--grey">{{ item.role }}</span>
+          <div class="team__bio">{{ item.bio }}</div>
+        </figure>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% if is_preview %}
+  </div>
+{% endif %}

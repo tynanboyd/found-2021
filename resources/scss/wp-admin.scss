@@ -2,7 +2,9 @@
 
 /* Hide Update Notifications */
 
-#adminmenu .update-plugins { display: none; }
+#adminmenu .update-plugins {
+  display: none;
+}
 
 /* ACF */
 
@@ -14,4 +16,12 @@
 .acf-image-uploader img {
   max-width: 100%;
   height: auto;
+}
+
+.frontend-styles,
+.editor-styles-wrapper,
+.wp-block[data-type*='core'] {
+  // @import 'vendor/bootstrap-admin';
+  @import 'custom/variables';
+  @import 'custom/partials';
 }

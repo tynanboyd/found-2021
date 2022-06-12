@@ -1,6 +1,9 @@
 .event-listing {
   position: relative;
-  margin-bottom: 4rem;
+
+  &__column {
+    margin-bottom: 4rem;
+  }
 
   &__performance-type {
     position: absolute;
@@ -10,6 +13,16 @@
     color: white;
     font-size: 0.8rem;
     padding: 4px;
+  }
+
+  &__bio {
+    &-chevron {
+    }
+
+    &-toggle {
+      display: block;
+      margin: 1rem 0;
+    }
   }
 
   &__closed-captions {
@@ -37,12 +50,10 @@
       transition: color 0.2s;
       letter-spacing: 2px;
       font-size: 2rem;
-
     }
   }
 
   &:hover {
-
     .event-listing__title {
       color: $color-highlight;
       -webkit-text-stroke: 1.5px $color-highlight;

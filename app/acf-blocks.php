@@ -46,6 +46,21 @@ function register_custom_acf_blocks() {
     ]);
 
     acf_register_block_type([
+        'name' => 'team',
+        'title' => __('Team'),
+        'description' => __('A block for adding team members.'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'art',
+        'keywords' => ['team', 'staff'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false,
+        ],
+        'post_types' => ['page'],
+    ]);
+
+    acf_register_block_type([
         'name' => 'content-warning',
         'title' => __('Content Warning'),
         'description' => __('A block for adding collapsable content warnings.'),

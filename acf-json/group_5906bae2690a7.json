@@ -136,7 +136,7 @@
                         "id": ""
                     },
                     "display_format": "F j, Y g:i a",
-                    "return_format": "F j, Y g:i a",
+                    "return_format": "Y-m-d H:i:s",
                     "first_day": 1
                 },
                 {
@@ -365,6 +365,25 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_62a6001bb751b",
+            "label": "Short Bio",
+            "name": "short_bio",
+            "type": "wysiwyg",
+            "instructions": "Appears on lineup pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -391,5 +410,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1625171293
+    "show_in_rest": 0,
+    "modified": 1655054229
 }

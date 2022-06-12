@@ -1,0 +1,10 @@
+.team {
+  &__name,
+  &__role {
+    margin-bottom: 0.25rem;
+  }
+
+  &__role {
+    font-size: 0.85rem;
+  }
+}

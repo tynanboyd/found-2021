@@ -3,13 +3,46 @@
     "title": "Lineup Template Settings",
     "fields": [
         {
+            "key": "field_62a6006ef2461",
+            "label": "Events to Show",
+            "name": "events_to_show",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all": "All Event Types",
+                "specific": "Specific Type(s)"
+            },
+            "default_value": "all",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_62a163a767d6b",
             "label": "Event Types",
             "name": "event_types",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62a6006ef2461",
+                        "operator": "==",
+                        "value": "specific"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -43,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654744031
+    "modified": 1655046343
 }

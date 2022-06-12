@@ -15,7 +15,7 @@ This file handles the admin area and functions.
 function enqueue_custom_admin_stylesheets() {
     wp_enqueue_style('custom-admin-styles', get_stylesheet_directory_uri() . '/public/css/wp-admin.css');
 }
-// add_action('admin_enqueue_scripts', 'enqueue_custom_admin_stylesheets');
+add_action('admin_enqueue_scripts', 'enqueue_custom_admin_stylesheets');
 
 
 // ----------------------------------------------------

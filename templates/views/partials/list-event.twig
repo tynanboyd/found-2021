@@ -10,3 +10,24 @@
     {% endif %}
   </article>
 </a>
+
+{% if is_music_page %}
+ {% if event.meta('performance_times') %}
+  <div class="event-listing__times">
+    {% for time in event.meta('performance_times') %}
+      <time>{{ time.date_time|date('l, g:i a')}}</time>
+    {% endfor %}
+  </div>
+ {% endif %}
+{% endif %}
+
+
+{% if event.meta('short_bio') %}
+
+  <a class="event-listing__bio-toggle" data-toggle="collapse" href="#{{ event.title|sanitize }}-bio" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Bio <span class="event-listing__bio-chevron">{% include 'public/images/icons/chevron-down.svg' ignore missing %}</span>
+  </a>
+  <div class="collapse event-listing__bio" id="{{ event.title|sanitize }}-bio">
+    {{ event.meta('short_bio') }}
+  </div>
+{% endif %}

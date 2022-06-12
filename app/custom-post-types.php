@@ -33,7 +33,7 @@ function register_event_post_type()
         'supports' => ['title', 'editor', 'thumbnail'],
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-format-video',
-        'taxoomies' => ['event_type'],
+        'taxonomies' => ['event_type'],
         'labels' => [
             'name' => _x('Events', 'post type general name', 'textdomain'),
             'singular_name' => _x('Event', 'post type singular name', 'textdomain'),

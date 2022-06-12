@@ -21,6 +21,13 @@ module.exports = {
   errLogToConsole: true,
   precision: 10,
 
+  // Admin Style options.
+  admimStyleSRC: './resources/scss/wp-admin.scss', // Path to main .scss file.
+  adminStyleDestination: './public/css/', // Path to place the compiled CSS file. Default set to root folder.
+  adminOutputStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
+  adminErrLogToConsole: true,
+  adminPrecision: 10,
+
   // JS Vendor options.
   jsVendorSRC: './resources/js/vendor/*.js', // Path to JS vendor folder.
   jsVendorDestination: './public/js/', // Path to place the compiled JS vendors file.
@@ -37,6 +44,7 @@ module.exports = {
 
   // Watch files paths.
   watchStyles: './resources/scss/**/*.scss', // Path to all *.scss files inside css folder and inside them.
+  watchAdminStyles: './resources/scss/wp-admin.scss', // Path to admin scss file
   watchJsVendor: './resources/js/vendor/*.js', // Path to all vendor JS files.
   watchJsCustom: './resources/js/custom/*.js', // Path to all custom JS files.
   watchTwig: './**/*.twig', // Path to all Twig files.

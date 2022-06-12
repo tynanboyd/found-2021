@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 // ---------------------------
 
 /**
- * Registers `book_genre` custom taxonomy.
+ * Registers `event_type` custom taxonomy.
  */
 function register_event_type_taxonomy(): void
 {
@@ -19,6 +19,7 @@ function register_event_type_taxonomy(): void
         [
             'hierarchical' => true,
             'public' => true,
+            'show_in_rest' => true,
             'labels' => [
                 'name' => _x('Types', 'taxonomy general name', 'textdomain'),
                 'singular_name' => _x('Type', 'taxonomy singular name', 'textdomain'),

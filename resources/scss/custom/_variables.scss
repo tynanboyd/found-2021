@@ -16,11 +16,14 @@ $electric-green: #00ffd3;
 $color-highlight: $color-2022;
 $color-contrast: #facee1;
 $color-darkmode: #121212;
+$color-grey-text: #ababab;
+$white: #fff;
 
 $color-list: (
   'white': #fff,
   'black': #000,
   'color-darkmode': $color-darkmode,
+  'grey': $color-grey-text,
 );
 
 @each $key, $val in $color-list {
